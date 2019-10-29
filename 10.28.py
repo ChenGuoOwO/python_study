@@ -77,7 +77,7 @@ class ClassFunc(object):
 
 """
 继承：重用已经存在的数据和行为，减少代码的重复编写
-1、子类继承父类所有的实例变量和方法
+1、子类继承父类所有的属性和方法（包括构造方法和实例属性）
 """
 
 """类属性的继承"""
@@ -111,7 +111,9 @@ class Fruit(object):
 
 class Apple(Fruit):
     def __init__(self, name, brand, color):
-        Fruit.__init__(self, name)
+        super().__init__(name)
+        # super().foo() 直接调用父类方法
+        # Fruit.__init__(self, name)
         self.brand = brand
         self.color = color
 
